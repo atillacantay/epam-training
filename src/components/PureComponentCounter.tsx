@@ -17,7 +17,7 @@ class PureComponentCounter extends React.PureComponent<Props, State> {
       <div className="counter">
         Current count: {this.state.count}
         {/* This child can be used too for reusability
-        <CounterElements
+        <Counter
           value={this.state.count}
           onDecrease={() => this.setState({ count: this.state.count - 1 })}
           onIncrease={() => this.setState({ count: this.state.count + 1 })}
@@ -25,13 +25,21 @@ class PureComponentCounter extends React.PureComponent<Props, State> {
         <div className="action-buttons">
           <button
             value={this.state.count}
-            onClick={() => this.setState({ count: this.state.count - 1 })}
+            onClick={() =>
+              this.setState((state) => ({
+                count: state.count - 1,
+              }))
+            }
           >
             -
           </button>
           <button
             value={this.state.count}
-            onClick={() => this.setState({ count: this.state.count + 1 })}
+            onClick={() =>
+              this.setState((state) => ({
+                count: state.count + 1,
+              }))
+            }
           >
             +
           </button>

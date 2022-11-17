@@ -16,7 +16,7 @@ class CreateElementCounter extends React.Component<Props, State> {
       "div",
       { className: "counter" },
       // This child can be used too for reusability
-      // <CounterElements
+      // <Counter
       //   value={this.state.count}
       //   onDecrease={() => this.setState({ count: this.state.count - 1 })}
       //   onIncrease={() => this.setState({ count: this.state.count + 1 })}
@@ -27,12 +27,22 @@ class CreateElementCounter extends React.Component<Props, State> {
         { className: "action-buttons" },
         React.createElement(
           "button",
-          { onClick: () => this.setState({ count: this.state.count - 1 }) },
+          {
+            onClick: () =>
+              this.setState((state) => ({
+                count: state.count - 1,
+              })),
+          },
           "-"
         ),
         React.createElement(
           "button",
-          { onClick: () => this.setState({ count: this.state.count + 1 }) },
+          {
+            onClick: () =>
+              this.setState((state) => ({
+                count: state.count + 1,
+              })),
+          },
           "+"
         )
       )

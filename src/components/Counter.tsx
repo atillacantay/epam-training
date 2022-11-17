@@ -1,16 +1,12 @@
 import "../styles/counter.css"
 
-interface CounterElementsProps {
+interface CounterProps {
   value: number | string
   onDecrease: () => void
   onIncrease: () => void
 }
 
-const CounterElements = ({
-  value,
-  onDecrease,
-  onIncrease,
-}: CounterElementsProps) => {
+const Counter = ({ value, onDecrease, onIncrease }: CounterProps) => {
   return (
     <div className="counter">
       <span>Current count: {value}</span>
@@ -22,4 +18,4 @@ const CounterElements = ({
   )
 }
 
-export default CounterElements
+export default Counter
